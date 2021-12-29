@@ -1,6 +1,6 @@
-class CreateHomes < ActiveRecord::Migration[6.1]
+class CreateListings < ActiveRecord::Migration[6.1]
   def change
-    create_table :homes do |t|
+    create_table :listings do |t|
       t.string :image
       t.string :name
       t.integer :price

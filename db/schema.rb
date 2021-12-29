@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_175136) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "homes", force: :cascade do |t|
+  create_table "listings", force: :cascade do |t|
     t.string "image"
     t.string "name"
     t.integer "price"
