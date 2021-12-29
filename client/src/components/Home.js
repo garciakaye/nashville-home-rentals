@@ -1,26 +1,16 @@
-import { useEffect, useState } from "react";
+import React from "react";
+
 
 function Home() {
-    const [listings, setListings] = useState([])
     
-    useEffect(() => {
-        fetch("/listings")
-        .then((r) => r.json())
-        .then((listing) => console.log(listing))
-    }, [])
     
-    const listingToDisplay = listings.map((listing) => (
-        <ul key={listing.id}> 
-            {listing.name}
-        </ul>
-    ))
+    
 
     return (
         <div>
-            <h2>Listings</h2>
-            <li>
-                {listingToDisplay}
-            </li>
+            <h2>Nashville Luxury Home Rentals</h2>
+           
+            
         </div>
       );
 }
