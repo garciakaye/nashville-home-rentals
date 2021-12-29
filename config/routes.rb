@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :homes
+  resources :listings
   resources :reviews
   resources :users
   # Routing logic: fallback requests for React Router.
