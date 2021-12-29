@@ -1,10 +1,14 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
+// import NavBar from "./NavBar";
+import Home from "./Home";
+
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1>Nashville Home Rentals</h1>
+    <Home />
     </div>
   );
 }
