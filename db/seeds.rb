@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Seeding data..."
 
 Review.create(comment: "Beautifully designed and near all the best restaurants and bars!", rating: 5)
 Review.create(comment: "Great place for large groups", rating: 4)
 Review.create(comment: "Best experience I've had! The hosts were amazing", rating: 4)
+
+puts "✅ Done seeding!"
