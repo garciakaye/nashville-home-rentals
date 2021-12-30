@@ -6,7 +6,7 @@ function ListingContainer({ listing }) {
 
    return (
        <div>
-           {image}
+           
        </div>
    )
 }
