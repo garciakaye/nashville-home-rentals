@@ -1,23 +1,20 @@
 import React from "react";
-
+import ListingContainer from "./ListingContainer"
 
 function Home({ listings }) {
     
-    const showListings = listings.map((listing) => (
-        <ul key={listing.id}>
-            {listing.name}
-        </ul>
-    ))
+    const showListings = listings.map((listing) => {
+        return <ListingContainer key={listing.id} listing={listing} />
+    })
     
     
 
     return (
         <div>
-            <h2>Nashville Luxury Home Rentals</h2>
-           {showListings}
+            {showListings}  
             
         </div>
-      );
+    );
 }
 
 export default Home;
