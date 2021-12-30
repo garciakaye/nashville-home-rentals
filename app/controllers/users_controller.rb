@@ -1,5 +1,18 @@
 class UsersController < ApplicationController
 
+    #  GET /users
+    def index
+        @users = Users.all
+
+        render json: @users
+    end
+
+    # GET /users/1
+    def show
+        render json: @user
+    end
+
+    # POST /users
     def create
         @user = User.new(user_params)
 
@@ -10,6 +23,20 @@ class UsersController < ApplicationController
         else
             render json: { error: @user.errors.full_messages }, status: :not_acceptable
         end
+    end
+
+    # PATCH /users/1
+    def update
+        if @user.update(user_params)
+            render json: @user
+        else
+            render json: @user.errors, status: :unprocessable_entity
+        end
+    end
+
+    #  DELETE 
+    def destroy
+        @user.destroy
     end
 
     private
