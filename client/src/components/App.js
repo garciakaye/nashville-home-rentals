@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import './App.css';
-// import NavBar from "./NavBar";
+import NavBar from "./NavBar";
 import Home from "./Home";
 
 
@@ -10,12 +10,13 @@ function App() {
     useEffect(() => {
         fetch("/listings")
         .then((r) => r.json())
-        .then((listing) => console.log(listing))
+        .then((listing) => setListings(listing))
     }, [])
 
   return (
     <div>
-    <Home listings={listings}/>
+      <NavBar />
+      <Home listings={listings}/>
     </div>
   );
 }
