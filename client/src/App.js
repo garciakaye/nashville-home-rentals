@@ -16,22 +16,29 @@ function App() {
     setCurrentUser(user);
     setLoggedIn(true);
   }
-    
-  useEffect(() => {
-    fetch("/listings")
-    .then((r) => r.json())
-    .then((listing) => setListings(listing))
-  }, [])
+    useEffect(() => {
+      const token = localStorage.getItem('jwt')
+      if(token && !loggedIn) {
+        // fetch to rails backend
+        setLoggedIn(true);
+      }
+    }, [])
+  // useEffect(() => {
+  //   fetch("/listings")
+  //   .then((r) => r.json())
+  //   .then((listing) => setListings(listing))
+  // }, [])
 
   return (
     <div>
+      { loggedIn ? <h1>Hey we're loggedin!</h1> : null }
     <NavBar />
     <Switch>
       <Route exact path="/">
         <Home listings={listings}/>
       </Route>
       <Route exact path="/signup">
-        <Signup loginUser={loginUser}/>
+        <Signup loginUser={ loginUser }/>
       </Route>
       <Route exact path="/login">
         <Login />

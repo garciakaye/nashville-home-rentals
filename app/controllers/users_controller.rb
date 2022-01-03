@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-
+    skip_before_action :authorized, only: [:index, :create]
+    before_action :set_user, only: [:show, :update, :destroy]
+  
     #  GET /users
     def index
         @users = User.all
@@ -18,7 +20,7 @@ class UsersController < ApplicationController
 
         if @user.save
             @token = encode_token({ user_id: @user.id })
-            render json: { user: @user, token: @token}, status: :created 
+            render json: { user: @user, token: @token }, status: :created 
         else
             render json: { error: @user.errors.full_messages }, status: :not_acceptable
         end

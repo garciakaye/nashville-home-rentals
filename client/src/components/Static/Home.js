@@ -11,8 +11,7 @@ function Home({ listings }) {
 
     return (
         <div>
-            {showListings}  
-            
+            {showListings} 
         </div>
     );
 }

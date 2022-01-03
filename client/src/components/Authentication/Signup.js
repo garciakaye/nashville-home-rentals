@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { baseUrl, headers } from '../../Globals';
 
-function Signup() {
+function Signup({ loginUser }) {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -23,6 +23,8 @@ function handleSubmit(e){
 		.then(resp => resp.json())
 		.then(data => {
 			//login user
+			loginUser(data.user);
+			localStorage.setItem('jwt', data.token)
 		})
 }
 
