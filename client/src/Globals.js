@@ -4,3 +4,9 @@ export const headers = {
     "Content-Type": "application/json"
     // "Authorization"
 };
+
+export function getToken(){
+    return {
+        'Authorization': `bearer ${ localStorage.getItem('jwt') }`
+    }
+}
