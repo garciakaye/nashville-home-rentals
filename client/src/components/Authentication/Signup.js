@@ -20,6 +20,10 @@ function handleSubmit(e){
 		headers,
 		body: JSON.stringify(strongParams)
 	})
+		.then(resp => resp.json())
+		.then(data => {
+			//login user
+		})
 }
 
 

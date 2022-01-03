@@ -8,7 +8,14 @@ import Login from "./components/Authentication/Login";
 
 
 function App() {
-  const [listings, setListings] = useState([])
+  const [listings, setListings] = useState([]);
+  const [currentUser, setCurrentUser] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  function loginUser(user) {
+    setCurrentUser(user);
+    setLoggedIn(true);
+  }
     
   useEffect(() => {
     fetch("/listings")
@@ -24,7 +31,7 @@ function App() {
         <Home listings={listings}/>
       </Route>
       <Route exact path="/signup">
-        <Signup />
+        <Signup loginUser={loginUser}/>
       </Route>
       <Route exact path="/login">
         <Login />
