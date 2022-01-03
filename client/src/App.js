@@ -39,7 +39,7 @@ function App() {
           .then(user => loginUser(user))
         // setLoggedIn(true);
       }
-    }, [loggedIn])
+    }, [])
 
 
   // useEffect(() => {
@@ -60,7 +60,7 @@ function App() {
         <Signup loginUser={ loginUser }/>
       </Route>
       <Route exact path="/login">
-        <Login />
+        <Login loginUser={ loginUser }/>
       </Route>
     </Switch>
     </div>
