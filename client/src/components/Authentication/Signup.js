@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { baseUrl, headers } from '../../Globals';
 
 function Signup() {
 	const [username, setUsername] = useState('');
@@ -13,6 +14,12 @@ function handleSubmit(e){
 			password
 		}
 	}
+
+	fetch(baseUrl + '/users', {
+		method: "POST",
+		headers,
+		body: JSON.stringify(strongParams)
+	})
 }
 
 
