@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
-  before_action :authorized
+  before_action :authorized, only: :login
 
   def encode_token(payload)
     JWT.encode(payload, ENV['JWT_SECRET'])
@@ -33,7 +33,7 @@ class ApplicationController < ActionController::API
   end
 
   def logged_in?
-    !!current_dog
+    !!current_user
   end
 
   def authorized

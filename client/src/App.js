@@ -39,14 +39,14 @@ function App() {
           .then(user => loginUser(user))
         // setLoggedIn(true);
       }
-    }, [])
+    }, [loggedIn])
 
 
-  // useEffect(() => {
-  //   fetch("/listings")
-  //   .then((r) => r.json())
-  //   .then((listing) => setListings(listing))
-  // }, [])
+  useEffect(() => {
+    fetch(baseUrl + '/listings')
+    .then((r) => r.json())
+    .then((listing) => setListings(listing))
+  }, [])
 
   return (
     <div>

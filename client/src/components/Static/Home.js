@@ -11,6 +11,7 @@ function Home({ listings }) {
 
     return (
         <div>
+            <h1>Nash Home Rentals</h1>
             {showListings} 
         </div>
     );

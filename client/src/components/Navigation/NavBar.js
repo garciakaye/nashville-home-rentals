@@ -1,15 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
+const linkStyles = {
+  display: "inline-flex",
+  font: "Montserrat",
+  padding: "8px",
+  margin: "0 7px 7px",
+  background: "white",
+  textDecoration: "none",
+  color: "Black",
+};
 
 function NavBar({ loggedIn, logoutUser }) {
 
   function loggedOutLinks(){
     return (
       <div>
-        <Link to="/">Home</Link>
-        <Link to="/signup">Signup</Link>
-        <Link to="/login">Login</Link>
+        <NavLink 
+        to="/"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "black",
+          color: "white"
+        }}
+        >
+        Home
+        </NavLink>
+        <NavLink 
+        to="/signup"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "black",
+          color: "white"
+        }}
+        >
+        Signup
+        </NavLink>
+        <NavLink 
+        to="/login"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "black",
+          color: "white"
+        }}
+        >
+        Login
+        </NavLink>
       </div>
     )
   }
@@ -23,8 +62,18 @@ function NavBar({ loggedIn, logoutUser }) {
   function loggedInLinks(){
     return (
       <div>
-        <Link to="/">Home</Link>
-        <a href="#" onClick={ handleLogout }>Logout</a>
+        <NavLink 
+        to="/"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "black",
+          color: "white"
+        }}
+        >
+        Home
+        </NavLink>
+        <a href="#home" onClick={ handleLogout }>Logout</a>
       </div>
     )
   }

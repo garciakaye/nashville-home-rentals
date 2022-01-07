@@ -7,6 +7,7 @@ function ListingContainer({ listing }) {
   return (
 		<div>
 			{name}
+      
 		</div>
   )
 }
