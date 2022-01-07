@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import './App.css';
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/Navigation/NavBar";
-import Home from "./components/static/Home";
+import Home from "./components/Static/Home";
 import Signup from "./components/Authentication/Signup";
 import Login from "./components/Authentication/Login";
 import { baseUrl, headers, getToken } from "./Globals"
