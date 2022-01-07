@@ -51,7 +51,7 @@ function App() {
   return (
     <div>
       { loggedIn ? <h1>Hey we're loggedin!</h1> : null }
-    <NavBar loggedIn={ loggedIn } logoutUser={logoutUser } />
+    <NavBar loggedIn={ loggedIn } logoutUser={ logoutUser } />
     <Switch>
       <Route exact path="/">
         <Home listings={listings}/>
@@ -60,7 +60,7 @@ function App() {
         <Signup loginUser={ loginUser }/>
       </Route>
       <Route exact path="/login">
-        <Login loginUser={ loginUser }/>
+        <Login loggedIn={ loggedIn } loginUser={ loginUser }/>
       </Route>
     </Switch>
     </div>

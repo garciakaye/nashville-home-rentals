@@ -1,5 +1,6 @@
 import React from "react";
 import HomeListingCard from "./HomeListingCard"
+import { Container } from "react-bootstrap";
 
 function Home({ listings }) {
     
@@ -10,10 +11,10 @@ function Home({ listings }) {
     
 
     return (
-        <div>
+        <Container>
             <h1>Nash Home Rentals</h1>
             {showListings} 
-        </div>
+        </Container>
     );
 }
 
