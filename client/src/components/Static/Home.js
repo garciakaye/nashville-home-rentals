@@ -1,10 +1,10 @@
 import React from "react";
-import ListingContainer from "./ListingContainer"
+import HomeListingCard from "./HomeListingCard"
 
 function Home({ listings }) {
     
     const showListings = listings.map((listing) => {
-        return <ListingContainer key={listing.id} listing={listing} />
+        return <HomeListingCard key={listing.id} listing={listing} />
     })
     
     

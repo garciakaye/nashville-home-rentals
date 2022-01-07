@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function ListingContainer({ listing }) {
+function HomeListingCard({ listing }) {
   const {id, name, image, price} = listing
 
   return (
@@ -12,4 +12,4 @@ function ListingContainer({ listing }) {
   )
 }
 
-export default ListingContainer;
+export default HomeListingCard;
