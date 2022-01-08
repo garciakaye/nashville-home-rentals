@@ -64,7 +64,7 @@ function App() {
         <Login loggedIn={ loggedIn } loginUser={ loginUser }/>
       </Route>
       <Route exact path="/listings">
-        <Listings listings={listings}/>
+        <Listings listings={listings} loggedIn={ loggedIn }/>
       </Route>
     </Switch>
     </div>
