@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Seeding data..."
 
-Review.create(comment: "Beautifully designed and near all the best restaurants and bars!", rating: 5)
-Review.create(comment: "Great place for large groups", rating: 4)
-Review.create(comment: "Best experience I've had! The hosts were amazing", rating: 4)
+Review.create(comment: "Beautifully designed and near all the best restaurants and bars!", rating: 5, listing_id: 7)
+Review.create(comment: "Great place for large groups", rating: 4, listing_id: 8)
+Review.create(comment: "Best experience I've had! The hosts were amazing", rating: 4, listing_id: 9)
 
 Listing.create(image: "https://a0.muscache.com/im/pictures/4dfd9f68-1216-4656-85ab-23cb028adec9.jpg", name: "Nashville Greenhaus", price: 500)
 Listing.create(image: "https://a0.muscache.com/im/pictures/b56b68b0-0d5c-4645-989c-a8002377bd13.jpg", name: "Luxury Stay", price: 800)
