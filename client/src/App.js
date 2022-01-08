@@ -58,7 +58,7 @@ function App() {
         <Home listings={listings}/>
       </Route>
       <Route exact path="/signup">
-        <Signup loginUser={ loginUser }/>
+        <Signup loginUser={ loginUser } loggedIn={ loggedIn }/>
       </Route>
       <Route exact path="/login">
         <Login loggedIn={ loggedIn } loginUser={ loginUser }/>

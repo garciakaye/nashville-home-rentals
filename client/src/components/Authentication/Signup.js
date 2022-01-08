@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { baseUrl, headers } from '../../Globals';
+import { useHistory } from "react-router-dom";
 
-function Signup({ loginUser }) {
+function Signup({ loginUser, loggedIn }) {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
+	const history = useHistory();
+
+	useEffect(() => {
+		if( loggedIn ) {
+			history.push("/listings")
+		}
+	}, [loggedIn, history])
 
 function handleSubmit(e){
 	e.preventDefault();
