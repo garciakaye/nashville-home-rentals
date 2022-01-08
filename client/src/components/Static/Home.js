@@ -11,10 +11,12 @@ function Home({ listings }) {
     
 
     return (
-        <Container>
+        <div>
             <h1>Nash Home Rentals</h1>
+        <Container>
             {showListings} 
         </Container>
+        </div>
     );
 }
 
