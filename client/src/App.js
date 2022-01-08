@@ -6,7 +6,7 @@ import Home from "./components/Static/Home";
 import Signup from "./components/Authentication/Signup";
 import Login from "./components/Authentication/Login";
 import Listings from "./components/Listings/Listings";
-import { baseUrl, headers, getToken } from "./Globals"
+import { baseUrl, headers, getToken } from "./Globals";
 
 
 function App() {
@@ -50,9 +50,8 @@ function App() {
   }, [])
 
   return (
-    <div>
-      {/* { loggedIn ? <h1>Hey we're loggedin!</h1> : null } */}
-    <NavBar loggedIn={ loggedIn } logoutUser={ logoutUser } />
+    <div className="App">
+    <NavBar loggedIn={ loggedIn } logoutUser={ logoutUser } currentUser={ currentUser }/>
     <Switch>
       <Route exact path="/">
         <Home listings={listings}/>

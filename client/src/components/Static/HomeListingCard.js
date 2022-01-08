@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { Card, Row, Col, Button } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 
 
 
 function HomeListingCard({ listing }) {
-  const [index, setIndex] = useState(0)
+  // const [index, setIndex] = useState(0)
   const {id, name, image, price} = listing
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+  // const handleSelect = (selectedIndex, e) => {
+  //   setIndex(selectedIndex);
+  // };
 
   return (
 		<Row className="col-lg-3 col-md-4 col-sm-6 col-xs-12">

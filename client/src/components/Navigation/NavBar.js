@@ -11,7 +11,7 @@ const linkStyles = {
   color: "Black",
 };
 
-function NavBar({ loggedIn, logoutUser }) {
+function NavBar({ loggedIn, logoutUser, currentUser }) {
 
   function loggedOutLinks(){
     return (
@@ -73,8 +73,8 @@ function NavBar({ loggedIn, logoutUser }) {
         >
         Nash Home Rentals
         </NavLink>
-        {/* <NavLink 
-        to="/"
+        <NavLink 
+        to="/profile"
         exact
         style={linkStyles}
         activeStyle={{
@@ -82,8 +82,8 @@ function NavBar({ loggedIn, logoutUser }) {
           color: "white"
         }}
         >
-        Nash Home Rentals
-        </NavLink> */}
+        {currentUser.username}
+        </NavLink>
         <a href="#home" onClick={ handleLogout }>Logout</a>
       </div>
     )
