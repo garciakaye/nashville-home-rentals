@@ -73,6 +73,17 @@ function NavBar({ loggedIn, logoutUser }) {
         >
         Home
         </NavLink>
+        {/* <NavLink 
+        to="/"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "black",
+          color: "white"
+        }}
+        >
+        Nash Home Rentals
+        </NavLink> */}
         <a href="#home" onClick={ handleLogout }>Logout</a>
       </div>
     )

@@ -5,6 +5,7 @@ import NavBar from "./components/Navigation/NavBar";
 import Home from "./components/Static/Home";
 import Signup from "./components/Authentication/Signup";
 import Login from "./components/Authentication/Login";
+import Listings from "./components/Listings/Listings";
 import { baseUrl, headers, getToken } from "./Globals"
 
 
@@ -61,6 +62,9 @@ function App() {
       </Route>
       <Route exact path="/login">
         <Login loggedIn={ loggedIn } loginUser={ loginUser }/>
+      </Route>
+      <Route exact path="/listings">
+        <Listings listings={listings}/>
       </Route>
     </Switch>
     </div>
