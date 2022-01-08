@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "./components/Navigation/NavBar";
 import Home from "./components/Static/Home";
 import Signup from "./components/Authentication/Signup";
@@ -65,6 +65,7 @@ function App() {
       <Route exact path="/listings">
         <Listings listings={listings} loggedIn={ loggedIn }/>
       </Route>
+      <Redirect to="/" />
     </Switch>
     </div>
   );
