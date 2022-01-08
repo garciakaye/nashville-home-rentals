@@ -63,7 +63,7 @@ function NavBar({ loggedIn, logoutUser }) {
     return (
       <div>
         <NavLink 
-        to="/"
+        to="/listings"
         exact
         style={linkStyles}
         activeStyle={{
@@ -71,7 +71,7 @@ function NavBar({ loggedIn, logoutUser }) {
           color: "white"
         }}
         >
-        Home
+        Nash Home Rentals
         </NavLink>
         {/* <NavLink 
         to="/"

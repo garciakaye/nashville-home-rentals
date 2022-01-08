@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div>
-      { loggedIn ? <h1>Hey we're loggedin!</h1> : null }
+      {/* { loggedIn ? <h1>Hey we're loggedin!</h1> : null } */}
     <NavBar loggedIn={ loggedIn } logoutUser={ logoutUser } />
     <Switch>
       <Route exact path="/">
