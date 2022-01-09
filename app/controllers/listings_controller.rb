@@ -2,12 +2,12 @@ class ListingsController < ApplicationController
 
 	def index
 		@listings = Listing.all
-		render json: @listings
+		render json: @listings, include: :reviews
 	end
 	
 	def show
 		@listing = find(params[:id])
-		render json: @listing
+		render json: @listing, include: :reviews
 	end
 
 	# private

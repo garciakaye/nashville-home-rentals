@@ -5,9 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
 puts "Seeding data..."
 
-
+Review.destroy_all
+Listing.destroy_all
 
 listing1 = Listing.create(image: "https://a0.muscache.com/im/pictures/4dfd9f68-1216-4656-85ab-23cb028adec9.jpg", name: "Nashville Greenhaus", price: 500)
 listing2 = Listing.create(image: "https://a0.muscache.com/im/pictures/b56b68b0-0d5c-4645-989c-a8002377bd13.jpg", name: "Luxury Stay", price: 800)

@@ -28,7 +28,8 @@ ActiveRecord::Schema.define(version: 2022_01_08_211651) do
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "listing_id"
+    t.bigint "listing_id", null: false
+    t.index ["listing_id"], name: "index_reviews_on_listing_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +39,5 @@ ActiveRecord::Schema.define(version: 2022_01_08_211651) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "reviews", "listings"
 end
