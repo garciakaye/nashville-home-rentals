@@ -6,13 +6,15 @@ class ListingsController < ApplicationController
 	end
 	
 	def show
-		@listing = find(params[:id])
+		find_listing
+		# @listing = find(params[:id])
 		render json: @listing, include: [:reviews, :images]
 	end
-	# private
+	
+	private
 
-	# def find_listing
-	# 	@listing = Listing.find_by_id(params[:id])
-	# end
+	def find_listing
+		@listing = Listing.find_by_id(params[:id])
+	end
 
 end
