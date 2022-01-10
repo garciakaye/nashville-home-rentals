@@ -1,3 +1,3 @@
 class ListingSerializer < ActiveModel::Serializer
-  attributes :id, :image, :name, :price, :reviews, :images
+  attributes :id, :name, :price, :reviews, :images
 end
