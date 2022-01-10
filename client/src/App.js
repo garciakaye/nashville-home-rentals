@@ -13,6 +13,7 @@ function App() {
   const [listings, setListings] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
+  
 
   function loginUser(user) {
     setCurrentUser(user);
@@ -57,7 +58,7 @@ function App() {
         <Home listings={listings}/>
       </Route>
       <Route exact path="/signup">
-        <Signup loginUser={ loginUser } loggedIn={ loggedIn }/>
+        <Signup loginUser={ loginUser } loggedIn={ loggedIn }/> 
       </Route>
       <Route exact path="/login">
         <Login loggedIn={ loggedIn } loginUser={ loginUser }/>
