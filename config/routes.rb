@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images
   resources :listings, only: [:show, :index]
   resources :reviews, only: [:index]
   resources :users
