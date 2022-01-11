@@ -1,28 +1,30 @@
 body {
   font-family: "cursive";
-  color: black;
+  background-color: black;
   
 }
 div.App {
   background-color: black;
-  background-position: auto;
+  flex-wrap: wrap;
+  height:max-content
 }
 
 div.navbar {
   justify-content: center;
-  padding-top: 1
-  rem;
-  padding-bottom: 18rem;
+  padding-top: 0.5rem;
+  padding-bottom: 15rem;
   background: url("https://www.pngitem.com/pimgs/m/0-1800_nashville-skyline-silhouette-png-nashville-skyline-clip-art.png");
   background-position: center;
   background-size: cover;
   font-family: cursive;
+  background-color: black;
+  border-spacing: 0rem;
 }
 
 
 h1.home-h1 {
   text-align: center;
-  padding-top: 2rem;
+  padding-top: 0.5rem;
   padding-bottom: auto;
   font-family:cursive;
   color: rgb(247, 247, 247);
