@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+
 const linkStyles = {
   display: "inline-flex",
-  font: "Montserrat",
-  padding: "8px",
-  margin: "0 7px 7px",
-  background: "white",
+  font: "cursive",
+  padding: "7px",
+  margin: "0 12px 12px",
+  background: "rgb(247,247,247)",
   textDecoration: "none",
   color: "Black",
 };
@@ -16,13 +17,14 @@ function NavBar({ loggedIn, logoutUser, currentUser }) {
   function loggedOutLinks(){
     return (
       <div>
-        <NavLink 
+        <NavLink className="home-nav-link"
         to="/"
         exact
         style={linkStyles}
         activeStyle={{
-          background: "black",
-          color: "white"
+          // background: "black",
+          color: "grey",
+          font: "cursive"
         }}
         >
         Home
@@ -32,8 +34,8 @@ function NavBar({ loggedIn, logoutUser, currentUser }) {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "black",
-          color: "white"
+          // background: "black",
+          color: "grey"
         }}
         >
         Signup
@@ -43,8 +45,8 @@ function NavBar({ loggedIn, logoutUser, currentUser }) {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "black",
-          color: "white"
+          // background: "black",
+          color: "grey"
         }}
         >
         Login
@@ -61,14 +63,14 @@ function NavBar({ loggedIn, logoutUser, currentUser }) {
 
   function loggedInLinks(){
     return (
-      <div>
+      <div className="nav-links">
         <NavLink 
         to="/listings"
         exact
         style={linkStyles}
         activeStyle={{
-          background: "black",
-          color: "white"
+          // background: "black",
+          color: "grey"
         }}
         >
         Nash Home Rentals
@@ -78,8 +80,9 @@ function NavBar({ loggedIn, logoutUser, currentUser }) {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "black",
-          color: "white"
+          // background: "black",
+          color: "grey",
+          
         }}
         >
         {currentUser.username}

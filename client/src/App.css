@@ -1,5 +1,36 @@
 body {
-  font-family: "Montserrat"
+  font-family: "cursive";
+  color: black;
+  
+}
+div.App {
+  background-color: black;
+  background-position: auto;
+}
+
+div.navbar {
+  justify-content: center;
+  padding-top: 1
+  rem;
+  padding-bottom: 18rem;
+  background: url("https://www.pngitem.com/pimgs/m/0-1800_nashville-skyline-silhouette-png-nashville-skyline-clip-art.png");
+  background-position: center;
+  background-size: cover;
+  font-family: cursive;
+}
+
+
+h1.home-h1 {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: auto;
+  font-family:cursive;
+  color: rgb(247, 247, 247);
+  font-size: xxx-large;
+}
+
+.home-container {
+  padding-bottom: 8rem;
 }
 
 .container {
