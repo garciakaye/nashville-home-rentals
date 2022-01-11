@@ -61,7 +61,7 @@ function App() {
         <Signup loginUser={ loginUser } loggedIn={ loggedIn }/> 
       </Route>
       <Route exact path="/login">
-        <Login loggedIn={ loggedIn } loginUser={ loginUser }/>
+        <Login loggedIn={ loggedIn } loginUser={ loginUser } logoutUser={ logoutUser }/>
       </Route>
       <Route exact path="/listings">
         <Listings listings={listings} loggedIn={ loggedIn }/>

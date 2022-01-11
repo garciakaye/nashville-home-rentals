@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { baseUrl, headers } from '../../Globals';
 import { useHistory } from "react-router-dom";
 
-function Login({ loginUser, loggedIn }) {
+function Login({ loginUser, loggedIn, }) {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const history = useHistory();
@@ -12,6 +12,8 @@ function Login({ loginUser, loggedIn }) {
 			history.push("/listings")
 		}
 	}, [loggedIn, history])
+
+	
 
 function handleSubmit(e){
 	e.preventDefault();

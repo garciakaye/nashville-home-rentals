@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 const linkStyles = {
@@ -7,12 +8,13 @@ const linkStyles = {
   font: "cursive",
   padding: "7px",
   margin: "0 12px 12px",
-  background: "rgb(247,247,247)",
+  background: "rgb(255,255,255)",
   textDecoration: "none",
   color: "Black",
 };
 
 function NavBar({ loggedIn, logoutUser, currentUser }) {
+  const history = useHistory();
 
   function loggedOutLinks(){
     return (
@@ -22,7 +24,7 @@ function NavBar({ loggedIn, logoutUser, currentUser }) {
         exact
         style={linkStyles}
         activeStyle={{
-          // background: "black",
+          background: "white",
           color: "grey",
           font: "cursive"
         }}
@@ -34,7 +36,7 @@ function NavBar({ loggedIn, logoutUser, currentUser }) {
         exact
         style={linkStyles}
         activeStyle={{
-          // background: "black",
+          background: "white",
           color: "grey"
         }}
         >
@@ -59,6 +61,7 @@ function NavBar({ loggedIn, logoutUser, currentUser }) {
   function handleLogout(e){
     e.preventDefault();
     logoutUser();
+    history.push("/");
   }
 
   function loggedInLinks(){
@@ -80,7 +83,7 @@ function NavBar({ loggedIn, logoutUser, currentUser }) {
         exact
         style={linkStyles}
         activeStyle={{
-          // background: "black",
+          background: "white",
           color: "grey",
           
         }}

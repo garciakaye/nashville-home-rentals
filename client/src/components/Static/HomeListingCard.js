@@ -10,7 +10,7 @@ function HomeListingCard({ listings }) {
   
   return (
   
-    <Carousel>
+    <Carousel clasName="home-carousel-slide">
       <Carousel.Item>
       <img
         className="d-block w-100"
@@ -36,20 +36,3 @@ function HomeListingCard({ listings }) {
 export default HomeListingCard;
 
 
-// <Row className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    //   <Col>
-    //   <Card>
-    //     <Card.Header>{name}</Card.Header>
-    //     <Carousel interval={1000000}>
-    //       <Carousel.Item>
-    //       <Card.Img variant="top" src={image} alt={name}/>
-    //       </Carousel.Item>
-    //       <Carousel.Item>
-    //       <Card.Img variant="top" src={image} alt={name}/>
-    //       </Carousel.Item>
-    //     </Carousel>
-    //     <Card.Text>${price} / night</Card.Text>
-    //   </Card>
-    //   </Col>
-      
-		// </Row>

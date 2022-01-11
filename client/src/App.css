@@ -1,4 +1,4 @@
-body {
+html {
   font-family: "cursive";
   background-color: black;
   
@@ -13,11 +13,11 @@ div.navbar {
   justify-content: center;
   padding-top: 0.5rem;
   padding-bottom: 15rem;
-  background: url("https://www.pngitem.com/pimgs/m/0-1800_nashville-skyline-silhouette-png-nashville-skyline-clip-art.png");
+  background: url("https://www.pngkey.com/png/full/339-3391111_time-and-expertise-to-organizations-around-nashville-nashville.png");
   background-position: center;
   background-size: cover;
   font-family: cursive;
-  background-color: black;
+  background-color: white;
   border-spacing: 0rem;
 }
 
@@ -37,6 +37,43 @@ h1.home-h1 {
 
 .carousel-inner {
   box-sizing:content-box;
+  border-radius: 25px;
+}
+
+/* signup */
+.signup-h1 {
+  text-align: center;
+  color: white;
+  font-family:cursive;
+  font-size: xxx-large;
+}
+
+.signup-p {
+  text-align: center;
+  font-size: small;
+  font:italic;
+  color: white;
+}
+.signup-form {
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.form-label {
+  color: white;
+  font-family: cursive;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+input {
+  height: 35px;
+  width: 250px;
+}
+
+.input-submit {
+  width: 130px;
+  text-align: center;
 }
 
 .container {

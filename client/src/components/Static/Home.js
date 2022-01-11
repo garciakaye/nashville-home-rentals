@@ -1,7 +1,6 @@
 import React from "react";
 import HomeListingCard from "./HomeListingCard"
 import { Container } from "react-bootstrap";
-import Carousel from 'react-bootstrap/Carousel';
 
 
 function Home({ listings }) {
