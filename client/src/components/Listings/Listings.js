@@ -18,7 +18,7 @@ function Listings({ listings, loggedIn }) {
     
 
     return (
-        <div>
+        <div id="listing-collection">
         {showListings}
         </div>
     );

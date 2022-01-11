@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { Card, Row, Col } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import NewReviewForm from './NewReviewForm';
+
 
 function ListingCard({ listing }) {
-    const {id, name, price, images} = listing
+    const [showForm, setShowForm] = useState(false);
+    
+    const {id, name, price, reviews, images} = listing
 
-  
+  function handleNewReviewClick() {
+    setShowForm((showForm) => !showForm);
+  }
     
 		return (
-		<Row className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-      <Col>
       <Card>
         <Card.Header>{name}</Card.Header>
         <Carousel fade >
@@ -19,10 +23,17 @@ function ListingCard({ listing }) {
             </Carousel.Item>
           })}
         </Carousel>
-        <Card.Text>${price} / night</Card.Text>
+        <Card.Title>${price} / night</Card.Title>
+        <Card.Text>
+          { showForm ? <NewReviewForm listingId={listing.id} /> : null }
+            <button className="add-item-btn" onClick={handleNewReviewClick}>➕</button>
+          </Card.Text>
+        {reviews.map((review, index) => {
+          return <Card.Text key={index}>
+            {review.comment}
+          </Card.Text>
+        })}
       </Card>
-      </Col>
-		</Row>
   )
 }
 

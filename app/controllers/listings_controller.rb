@@ -10,6 +10,10 @@ class ListingsController < ApplicationController
 		# @listing = find(params[:id])
 		render json: @listing, include: [:reviews, :images]
 	end
+
+	def create
+		@listing = Listing.new(listing_params)
+	end
 	
 	private
 
@@ -17,4 +21,7 @@ class ListingsController < ApplicationController
 		@listing = Listing.find_by_id(params[:id])
 	end
 
+	def listing_params
+		params.require(:listing).permit(:name, :price, :images)
+	end
 end

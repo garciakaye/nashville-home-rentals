@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 const linkStyles = {
   display: "inline-flex",
   font: "cursive",
-  padding: "7px",
+  padding: "1rem",
   margin: "0 12px 12px",
   background: "rgb(255,255,255)",
   textDecoration: "none",

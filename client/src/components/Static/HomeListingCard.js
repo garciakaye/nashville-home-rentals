@@ -10,7 +10,7 @@ function HomeListingCard({ listings }) {
   
   return (
   
-    <Carousel clasName="home-carousel-slide">
+    <Carousel >
       <Carousel.Item>
       <img
         className="d-block w-100"

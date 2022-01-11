@@ -29,6 +29,7 @@ h1.home-h1 {
   font-family:cursive;
   color: rgb(247, 247, 247);
   font-size: xxx-large;
+
 }
 
 .home-container {
@@ -76,18 +77,24 @@ input {
   text-align: center;
 }
 
+/* listing */
+#listing-collection {
+  justify-content: space-evenly;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
 .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 
 .card {
   text-align: left;
   border: none;
   padding: 1rem;
-  width: 35rem;
+  width: 25rem;
   height: 40rem;
   display: inline-grid;
   margin: 1rem 2rem;
