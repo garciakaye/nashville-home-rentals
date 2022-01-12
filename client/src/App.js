@@ -76,15 +76,6 @@ function App() {
   }
 
 
-  // function handleUpdateReview(listingId, newReview){
-  //   const listingToUpdate = listings.find((listing) => listing.id === listingId);
-  //   listingToUpdate.reviews = [...listingToUpdate.reviews, newReview]
-  //   const objToUpdateIndex = listings.findIndex((listing) => listing.id === listingId)
-  //   const newState = [...listings]
-  //   newState[objToUpdateIndex] = listingToUpdate
-  //   setListings(newState)
-  // }
-
   return (
     <div className="App">
     <NavBar loggedIn={ loggedIn } logoutUser={ logoutUser } currentUser={ currentUser }/>
@@ -99,7 +90,7 @@ function App() {
         <Login loggedIn={ loggedIn } loginUser={ loginUser } logoutUser={ logoutUser }/>
       </Route>
       <Route exact path="/profile">
-        <Profile loggedIn={ loggedIn } loginUser={ loginUser } logoutUser={ logoutUser }/>
+        <Profile loggedIn={ loggedIn } loginUser={ loginUser } logoutUser={ logoutUser } currentUser={ currentUser }/>
       </Route>
       <Route exact path="/listings">
         <Listings listings={listings} loggedIn={ loggedIn } onAddReviewToListing={addToReviews} onDeleteReviewFromListing={deleteReview}/>
