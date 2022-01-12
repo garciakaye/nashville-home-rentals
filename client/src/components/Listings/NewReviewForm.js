@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { baseUrl } from '../../Globals';
 
-function NewReviewForm({ listingId, reviews }) {
-	const [ newReview, setNewReview ] = useState({
+function NewReviewForm({ listingId, onAddComment }) {
+	const [newReview, setNewReview] = useState({
 		comment: ""
 	})
 
@@ -20,7 +20,7 @@ function NewReviewForm({ listingId, reviews }) {
 	function handleSubmit(e) {
 		e.preventDefault();
 		const addedReview = {
-				name: newReview.comment,
+				comment: newReview.comment,
 				listing_id: listingId
 		};
 		fetch(baseUrl + '/reviews', {
@@ -32,26 +32,24 @@ function NewReviewForm({ listingId, reviews }) {
 		})
 				.then((r) => r.json())
 				.then((newlyAddedReview) => {
-						onAddItemToList(listingId, newlyAddedReview)
-						setNewReview(initialValues)
+					console.log(listingId, newlyAddedReview)
+					setNewReview(initialValues)
 				})
 }
 
 
-  return (
-		<div>
-			<form className="add-new-review-form" onSubmit={handleSubmit}>
-				<input
-				type="text"
-				name="name"
-				value={newReview.comment}
-				className="new-item-input-text"
-				onChange={handleChange}
-				/>
-				<br/>
-				<button className="add-new-item-btn" type="submit">Add</button>
-		</form>
-		</div>
+return (
+	<form className="add-new-review-form" onSubmit={handleSubmit}>
+		<input
+		type="text"
+		name="comment"
+		value={newReview.comment}
+		className="new-item-input-text"
+		onChange={handleChange}
+		/>
+		<br/>
+		<button className="add-new-item-btn" type="submit">Add</button>
+	</form>
 	)
 }
 

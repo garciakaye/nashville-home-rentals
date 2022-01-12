@@ -50,6 +50,8 @@ function App() {
     .then((listing) => setListings(listing))
   }, [])
 
+  
+
   return (
     <div className="App">
     <NavBar loggedIn={ loggedIn } logoutUser={ logoutUser } currentUser={ currentUser }/>
