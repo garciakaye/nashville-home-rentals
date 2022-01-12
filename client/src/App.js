@@ -6,6 +6,7 @@ import Home from "./components/Static/Home";
 import Signup from "./components/Authentication/Signup";
 import Login from "./components/Authentication/Login";
 import Listings from "./components/Listings/Listings";
+import Profile from "./components/Profile/Profile";
 import { baseUrl, headers, getToken } from "./Globals";
 
 
@@ -50,7 +51,39 @@ function App() {
     .then((listing) => setListings(listing))
   }, [])
 
+  function addToReviews(listingId, newReview){
+    const listingToUpdate = listings.find((listing) => listing.id === listingId);
+    listingToUpdate.reviews = [...listingToUpdate.reviews, newReview]
+    const objToUpdateIndex = listings.findIndex((listing) => listing.id === listingId)
+    const newState = [...listings]
+    newState[objToUpdateIndex] = listingToUpdate
+    setListings(newState)
+  }
   
+  function deleteReview(listingId, newReview){
+    const listingToUpdate = listings.find((listing) => listing.id === listingId);
+    const newReviews = listingToUpdate.reviews.filter((review) => review.id !== newReview.id)
+    listingToUpdate.reviews = newReviews
+    fetch(baseUrl + `/reviews/${newReview.id}`, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      
+      const objToUpdateIndex = listings.findIndex((review) => review.id === listingId)
+      const newState = [...listings]
+      newState[objToUpdateIndex] = listingToUpdate
+      setListings(newState)
+  }
+
+
+  // function handleUpdateReview(listingId, newReview){
+  //   const listingToUpdate = listings.find((listing) => listing.id === listingId);
+  //   listingToUpdate.reviews = [...listingToUpdate.reviews, newReview]
+  //   const objToUpdateIndex = listings.findIndex((listing) => listing.id === listingId)
+  //   const newState = [...listings]
+  //   newState[objToUpdateIndex] = listingToUpdate
+  //   setListings(newState)
+  // }
 
   return (
     <div className="App">
@@ -65,8 +98,11 @@ function App() {
       <Route exact path="/login">
         <Login loggedIn={ loggedIn } loginUser={ loginUser } logoutUser={ logoutUser }/>
       </Route>
+      <Route exact path="/profile">
+        <Profile loggedIn={ loggedIn } loginUser={ loginUser } logoutUser={ logoutUser }/>
+      </Route>
       <Route exact path="/listings">
-        <Listings listings={listings} loggedIn={ loggedIn }/>
+        <Listings listings={listings} loggedIn={ loggedIn } onAddReviewToListing={addToReviews} onDeleteReviewFromListing={deleteReview}/>
       </Route>
       <Redirect to="/" />
     </Switch>

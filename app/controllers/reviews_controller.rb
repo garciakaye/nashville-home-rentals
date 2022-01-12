@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     end
     
     def show
-		@review = find(params[:id])
+		find_review
 		render json: @review, include: :listing
 	end
 
@@ -21,14 +21,30 @@ class ReviewsController < ApplicationController
     end
 
     def update
-        if @review.update(review_params)
-            render json: @review
+        @review = Review.find_by(id:params[:id])
+        if @review
+            @review.update(review_params)
+            render json: @review, status: :accepted
         else
-            render json: @review.errors, status: :unprocessable_entity
+            render json: {error: "review not found"}, status: :not_found
+        end
+    end
+
+    def destroy
+        @review = Review.find_by(id:params[:id])
+        if @review
+            @review.destroy
+            head :no_content
+        else
+            render json: {error: "review not found"}, status: :not_found
         end
     end
 
     private
+
+    def find_review
+        @review = Review.find_by_id(params[:id])
+    end
 
     def review_params
         params.require(:review).permit(:comment, :listing_id)

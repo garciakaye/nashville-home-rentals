@@ -14,6 +14,11 @@ class ListingsController < ApplicationController
 	def create
 		@listing = Listing.new(listing_params)
 	end
+
+	# def destroy
+	# 	find_listing
+	# 	@listing.destroy
+	# end
 	
 	private
 

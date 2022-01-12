@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { baseUrl } from '../../Globals';
 
-function NewReviewForm({ listingId, onAddComment }) {
+function NewReviewForm({ listingId, onAddReviewToListing }) {
 	const [newReview, setNewReview] = useState({
 		comment: ""
 	})
@@ -32,7 +32,7 @@ function NewReviewForm({ listingId, onAddComment }) {
 		})
 				.then((r) => r.json())
 				.then((newlyAddedReview) => {
-					console.log(listingId, newlyAddedReview)
+					onAddReviewToListing(listingId, newlyAddedReview)
 					setNewReview(initialValues)
 				})
 }

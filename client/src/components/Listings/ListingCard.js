@@ -4,17 +4,11 @@ import { Card } from "react-bootstrap";
 import NewReviewForm from './NewReviewForm';
 
 
-function ListingCard({ listing, onAddComment }) {
+function ListingCard({ listing, onAddReviewToListing, onDeleteReviewFromListing }) {
   const [showForm, setShowForm] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   const {id, name, price, reviews, images} = listing
-  const [comment, setComment] = useState({
-    id: reviews.id,
-    comment: reviews.comment
-  })
-
-  function handleAddComment(newComment) {
-    setComment({...comment, newComment})
-  }
+  
 
   function handleNewReviewClick() {
     setShowForm((showForm) => !showForm);
@@ -23,7 +17,7 @@ function ListingCard({ listing, onAddComment }) {
   const displayComments = reviews.map((review) => (
     <ul key={review.id} >
       {review.comment}
-      {/* <button>Delete</button> */}
+      <button onClick={() => onDeleteReviewFromListing(id, review)}>Delete</button>
     </ul>
   ))
     
@@ -40,7 +34,7 @@ function ListingCard({ listing, onAddComment }) {
       <Card.Title>${price} / night</Card.Title>
         <Card.Text>
         </Card.Text>
-        { showForm ? <NewReviewForm listingId={listing.id} reviews={reviews} /> : null }
+        { showForm ? <NewReviewForm listingId={listing.id} reviews={reviews} onAddReviewToListing={onAddReviewToListing} /> : null }
           <button className="add-item-btn" onClick={handleNewReviewClick}>➕</button>
         {/* {reviews.map((review, index) => {
         return <span key={index}>

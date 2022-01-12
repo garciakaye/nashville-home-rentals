@@ -88,7 +88,7 @@ function NavBar({ loggedIn, logoutUser, currentUser }) {
           
         }}
         >
-        {currentUser.username}
+        {currentUser.first_name}
         </NavLink>
         <a href="#home" onClick={ handleLogout }>Logout</a>
       </div>
