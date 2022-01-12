@@ -25,7 +25,7 @@ function ListingCard({ listing }) {
         </Carousel>
         <Card.Title>${price} / night</Card.Title>
         <Card.Text>
-          { showForm ? <NewReviewForm listingId={listing.id} /> : null }
+          { showForm ? <NewReviewForm listingId={listing.id} reviews={reviews} /> : null }
             <button className="add-item-btn" onClick={handleNewReviewClick}>➕</button>
           </Card.Text>
         {reviews.map((review, index) => {
