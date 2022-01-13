@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 function Home({ listings }) {
     
   return (
-    <Container className="home-container">
+    <Container className="home-container" fluid="md">
       <h1 className="home-h1">Nashville Home Rentals</h1>
         <HomeListingCard key={listings.id} listings={listings} /> 
     </Container>

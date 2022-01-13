@@ -6,7 +6,6 @@ import NewReviewForm from './NewReviewForm';
 
 function ListingCard({ listing, onAddReviewToListing, onDeleteReviewFromListing }) {
   const [showForm, setShowForm] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
   const {id, name, price, reviews, images} = listing
   
 
@@ -17,7 +16,12 @@ function ListingCard({ listing, onAddReviewToListing, onDeleteReviewFromListing 
   const displayComments = reviews.map((review) => (
     <ul key={review.id} >
       {review.comment}
-      <button className="delete-btn" onClick={() => onDeleteReviewFromListing(id, review)}>🗑️</button>
+      <button 
+        className="delete-btn" 
+        onClick={() => onDeleteReviewFromListing(id, review)}
+        >
+        🗑️
+      </button>
     </ul>
   ))
     
@@ -34,8 +38,21 @@ function ListingCard({ listing, onAddReviewToListing, onDeleteReviewFromListing 
       <Card.Title>${price} / night</Card.Title>
         <Card.Text>
         </Card.Text>
-        { showForm ? <NewReviewForm listingId={listing.id} reviews={reviews} onAddReviewToListing={onAddReviewToListing} /> : null }
-          <button className="add-review-btn" onClick={handleNewReviewClick}>Add A Review</button>
+        { showForm ? 
+        <NewReviewForm 
+        listingId={listing.id} 
+        reviews={reviews} 
+        onAddReviewToListing={onAddReviewToListing} 
+        /> 
+        : 
+        null 
+        }
+        <button 
+        className="add-review-btn" 
+        onClick={handleNewReviewClick}
+        >
+        Add A Review
+        </button>
       {displayComments}
     </Card>
   )

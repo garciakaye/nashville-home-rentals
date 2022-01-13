@@ -51,27 +51,60 @@ return (
     <Form className="signup-form" onSubmit={ handleSubmit }>
 			<Form.Group className="form-label">
 				<Form.Label htmlFor="firstName"></Form.Label>
-					<input type="text" name="firstName" id="firstName" placeholder="First Name" value={ firstName } onChange={ e => setFirstName(e.target.value)}/>
+					<input 
+					type="text" 
+					name="firstName" 
+					id="firstName" 
+					placeholder="First Name" 
+					value={ firstName } 
+					onChange={ e => setFirstName(e.target.value)}/>
 			</Form.Group>
 			<Form.Group className="form-label">
 				<Form.Label htmlFor="lastName"></Form.Label>
-					<input type="text" name="lastName" id="lastName" placeholder="Last Name" value={ lastName } onChange={ e => setLastName(e.target.value)}/>
+					<input 
+					type="text" 
+					name="lastName" 
+					id="lastName" 
+					placeholder="Last Name" 
+					value={ lastName } 
+					onChange={ e => setLastName(e.target.value)}/>
 			</Form.Group>
 			<Form.Group className="form-label">
 				<Form.Label htmlFor="email"></Form.Label>
-					<input type="text" name="email" id="email" placeholder="Email" value={ email } onChange={ e => setEmail(e.target.value)}/>
+					<input 
+					type="text" 
+					name="email" 
+					id="email" 
+					placeholder="Email" 
+					value={ email } 
+					onChange={ e => setEmail(e.target.value)}/>
 			</Form.Group>
 			<Form.Group className="form-label">
 				<Form.Label htmlFor="username"></Form.Label>
-					<input type="text" name="username" id="username" placeholder="Username" value={ username } onChange={ e => setUsername(e.target.value)}/>
+					<input 
+					type="text" 
+					name="username" 
+					id="username" 
+					placeholder="Username" 
+					value={ username } 
+					onChange={ e => setUsername(e.target.value)}/>
 			</Form.Group>
 			<Form.Group className="form-label">
 				<Form.Label htmlFor="password"></Form.Label>
-					<input type="password" name="password" id="password" placeholder="Password" value={ password } onChange={ e => setPassword(e.target.value)} />
+					<input 
+					type="password" 
+					name="password" 
+					id="password" 
+					placeholder="Password" 
+					value={ password } 
+					onChange={ e => setPassword(e.target.value)} />
 			</Form.Group>
-			<input className="input-submit" type="submit" value="Create Account" />
+			<input 
+				className="input-submit" 
+				type="submit" 
+				value="Create Account" />
     </Form>
-  </div>
+	</div>
   )
 }
 

@@ -37,6 +37,11 @@ div.navbar {
   padding-bottom: 8rem;
 }
 
+.home-card{
+  width: 40rem;
+  height: 40rem;
+}
+
 .carousel-inner {
   box-sizing:content-box;
   /* border-radius: 25px; */

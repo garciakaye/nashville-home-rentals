@@ -18,7 +18,6 @@ function handleSubmit(){
 	})
 		.then((r) => r.json())
 		.then((newName) => setNewUsername(newName.username))
-		// setNewUsername("")
 }
 
   return (

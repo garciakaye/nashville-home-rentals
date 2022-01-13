@@ -21,9 +21,15 @@ function Profile({ currentUser }) {
 				Email: {email}
 				<br></br>
 				Username: {username}
-				{ showForm ? <EditProfileForm userId={id} firstName={first_name} username={username} /> : null }
+				{ showForm ? 
+				<EditProfileForm userId={id} firstName={first_name} username={username} /> 
+				: 
+				null 
+				}
 				<div className="add-item">
-            <button className="add-item-btn" onClick={handleEditClick}>
+            <button 
+						className="add-item-btn" 
+						onClick={handleEditClick}>
 							<span role="img" aria-label="edit">
               ✏️
             </span></button>

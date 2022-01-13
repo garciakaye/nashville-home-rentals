@@ -37,7 +37,6 @@ function handleSubmit(e){
 		})
 }
 
-
 return (
 	<div>
 		<h1 className="login-h1">Login</h1>

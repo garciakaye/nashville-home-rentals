@@ -3,10 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 
-
 function HomeListingCard({ listings }) {
-  const {id, name, images, price} = listings
-
   
   return (
     <Carousel>

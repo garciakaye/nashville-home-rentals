@@ -3,7 +3,7 @@ import ListingCard from './ListingCard';
 import { useHistory } from "react-router-dom";
 
 function Listings({ listings, loggedIn, onAddReviewToListing, onDeleteReviewFromListing }) {
-	const {id, name, price, reviews, images} = listings
+	// const {id, name, price, reviews, images} = listings
 	
 
 const history = useHistory();
@@ -16,7 +16,12 @@ const history = useHistory();
 
 
   const showListings = listings.map((listing) => {
-    return <ListingCard key={listing.id} listing={listing} onAddReviewToListing={onAddReviewToListing} onDeleteReviewFromListing={onDeleteReviewFromListing} />
+    return <ListingCard 
+						key={listing.id} 
+						listing={listing} 
+						onAddReviewToListing={onAddReviewToListing} 
+						onDeleteReviewFromListing={onDeleteReviewFromListing} 
+						/>
   })
     
 
