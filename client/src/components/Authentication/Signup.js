@@ -72,7 +72,7 @@ return (
 			<Form.Group className="form-label">
 				<Form.Label htmlFor="email"></Form.Label>
 					<input 
-					type="text" 
+					type="text"
 					name="email" 
 					id="email" 
 					placeholder="Email" 
