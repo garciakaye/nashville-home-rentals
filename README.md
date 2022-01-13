@@ -1,4 +1,6 @@
-# Project Template: React/Rails API
+# Nashville Home Rentals
+
+![React App 2022-01-13 09-41-23](https://user-images.githubusercontent.com/88004335/149362297-ec025840-dbd1-4c22-8d5a-821261eeeac2.png)
 
 ## Description
 
