@@ -45,7 +45,7 @@ function handleSubmit(e){
 
 
 return (
-  <div>
+	<div>
 		<h1 className="signup-h1">Create Account</h1>
 		<p className="signup-p">Signup to make bookings, leave reviews, and more!</p>
     <Form className="signup-form" onSubmit={ handleSubmit }>

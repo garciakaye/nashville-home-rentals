@@ -13,10 +13,10 @@ Review.destroy_all
 Listing.destroy_all
 Image.destroy_all
 
-listing1 = Listing.create(name: "Nashville Greenhaus I", price: 500)
-listing2 = Listing.create(name: "Nashville Greenhaus II", price: 500)
-listing3 = Listing.create(name: "Nashville Modern Luxury I", price: 800)
-listing4 = Listing.create(name: "Nashville Modern Luxury II", price: 800)
+listing1 = Listing.create(name: "Nashville Greenhaus I ✦ Downtown ✦ Skyline Views", price: 500)
+listing2 = Listing.create(name: "Nashville Greenhaus II ✦ Downtown! ✦ Skyline Views", price: 500)
+listing3 = Listing.create(name: "5 Mins to Broadway | Stunning Rooftop Views!", price: 800)
+listing4 = Listing.create(name: "Epic Rooftop ☆ 5 Mins from Broadway ☆ Luxury Stay", price: 800)
 listing5 = Listing.create(name: "Nashville Modern Luxury III", price: 800)
 
 Review.create(comment: "Beautifully designed and near all the best restaurants and bars!", rating: 5, listing_id: listing1.id)

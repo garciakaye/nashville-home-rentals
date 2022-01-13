@@ -48,7 +48,7 @@ return (
 		onChange={handleChange}
 		/>
 		<br/>
-		<button className="add-new-item-btn" type="submit">Add</button>
+		<button className="add-new-review-btn" type="submit">Save</button>
 	</form>
 	)
 }

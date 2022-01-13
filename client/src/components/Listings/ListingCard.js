@@ -17,7 +17,7 @@ function ListingCard({ listing, onAddReviewToListing, onDeleteReviewFromListing 
   const displayComments = reviews.map((review) => (
     <ul key={review.id} >
       {review.comment}
-      <button onClick={() => onDeleteReviewFromListing(id, review)}>Delete</button>
+      <button className="delete-btn" onClick={() => onDeleteReviewFromListing(id, review)}>🗑️</button>
     </ul>
   ))
     
@@ -35,12 +35,7 @@ function ListingCard({ listing, onAddReviewToListing, onDeleteReviewFromListing 
         <Card.Text>
         </Card.Text>
         { showForm ? <NewReviewForm listingId={listing.id} reviews={reviews} onAddReviewToListing={onAddReviewToListing} /> : null }
-          <button className="add-item-btn" onClick={handleNewReviewClick}>➕</button>
-        {/* {reviews.map((review, index) => {
-        return <span key={index}>
-          {review.comment}
-        </span>
-      })} */}
+          <button className="add-review-btn" onClick={handleNewReviewClick}>Add A Review</button>
       {displayComments}
     </Card>
   )

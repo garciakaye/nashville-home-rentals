@@ -6,7 +6,7 @@ html {
 div.App {
   background-color: black;
   flex-wrap: wrap;
-  height:max-content
+  height: max-content;
 }
 
 div.navbar {
@@ -19,17 +19,18 @@ div.navbar {
   font-family: cursive;
   background-color: white;
   border-spacing: 0rem;
+  max-width: 100%;
+  height: auto;
 }
 
 
-h1.home-h1 {
+.home-h1 {
   text-align: center;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
   padding-bottom: auto;
   font-family:cursive;
   color: rgb(247, 247, 247);
   font-size: xxx-large;
-
 }
 
 .home-container {
@@ -38,7 +39,7 @@ h1.home-h1 {
 
 .carousel-inner {
   box-sizing:content-box;
-  border-radius: 25px;
+  /* border-radius: 25px; */
 }
 
 /* signup */
@@ -77,6 +78,23 @@ input {
   text-align: center;
 }
 
+
+/* login */
+.login-h1 {
+  text-align: center;
+  color: white;
+  font-family: cursive;
+}
+
+.login-form {
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.login-btn {
+  height: max-content;
+  width: max-content;
+}
 /* listing */
 #listing-collection {
   justify-content: space-evenly;
@@ -100,3 +118,51 @@ input {
   margin: 1rem 2rem;
 }
 
+/* profile */
+.profile-card {
+  text-align: center;
+  width: 15rem;
+  height: 15rem;
+  font-family: cursive;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.new-username-input {
+  height: 35px;
+  width: 150px;
+}
+
+.delete-btn {
+  float: right;
+  position: relative;
+  border: none;
+  height: 1rem;
+  width: max-content;
+  font-size: 10px;
+  justify-self: center;
+  background-color: white;
+}
+
+.add-review-btn {
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  height: 1rem;
+  width: max-content;
+  font-size: 10px;
+  /* justify-self: center; */
+  float: right;
+  margin-bottom: 4px;
+}
+
+.new-item-input-text {
+  position: relative;
+  justify-self: center;
+  width: 80%;
+}
