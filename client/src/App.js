@@ -8,13 +8,14 @@ import Login from "./components/Authentication/Login";
 import Listings from "./components/Listings/Listings";
 import Profile from "./components/Profile/Profile";
 import { baseUrl, headers, getToken } from "./Globals";
+import { useHistory } from "react-router-dom";
 
 
 function App() {
   const [listings, setListings] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
-  
+  const history = useHistory();
 
   function loginUser(user) {
     setCurrentUser(user);
@@ -75,6 +76,20 @@ function App() {
       setListings(newState)
   }
 
+  function handleDeletedAccountRedirect(){
+    logoutUser();
+    history.push("/");
+  }
+
+  function deleteProfile(){
+    fetch(baseUrl + `/users/${currentUser.id}`, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      .then(console.log)
+      handleDeletedAccountRedirect()
+  }
+
 
   return (
     <div className="App">
@@ -90,7 +105,7 @@ function App() {
         <Login loggedIn={ loggedIn } loginUser={ loginUser } logoutUser={ logoutUser }/>
       </Route>
       <Route exact path="/profile">
-        <Profile loggedIn={ loggedIn } loginUser={ loginUser } logoutUser={ logoutUser } currentUser={ currentUser }/>
+        <Profile loggedIn={ loggedIn } loginUser={ loginUser } logoutUser={ logoutUser } currentUser={ currentUser } onDeleteProfile={deleteProfile}/>
       </Route>
       <Route exact path="/listings">
         <Listings listings={listings} loggedIn={ loggedIn } onAddReviewToListing={addToReviews} onDeleteReviewFromListing={deleteReview}/>

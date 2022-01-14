@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import EditProfileForm from './EditProfileForm';
 import { Card } from "react-bootstrap";
 
-function Profile({ currentUser }) {
+
+function Profile({ currentUser, onDeleteProfile }) {
 	const {id, first_name, last_name, email, username} = currentUser
 	const [showForm, setShowForm] = useState(false);
-	
+
 
 	function handleEditClick() {
 		setShowForm((showForm) => !showForm);
 }
 
+
 	return (
 		<Card className="profile-card">
+			<button 
+			onClick={() => onDeleteProfile(id)}>Delete Account</button>
 			<Card.Body >
 				First Name: {first_name}
 				<br></br>

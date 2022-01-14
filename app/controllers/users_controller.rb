@@ -37,7 +37,13 @@ class UsersController < ApplicationController
 
 	#  DELETE 
 	def destroy
-		@user.destroy
+		set_user
+		if @user
+			@user.destroy
+			render json: {}
+	else
+			render json: {error: "user not found"}, status: :not_found
+	end
 	end
 
 	private

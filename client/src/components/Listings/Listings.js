@@ -29,7 +29,7 @@ return (
   <div id="listing-collection">
   {showListings}
   </div>
-  );
+	);
 }
 
 export default Listings
